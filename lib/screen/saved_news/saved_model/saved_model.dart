@@ -17,7 +17,7 @@ class SavedModel extends HiveObject {
   String images;
 
   @HiveField(4)
-  int view;
+  String view;
 
   @HiveField(5)
   String time;

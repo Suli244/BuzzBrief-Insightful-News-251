@@ -21,7 +21,7 @@ class SavedModelAdapter extends TypeAdapter<SavedModel> {
       title: fields[1] as String,
       desciption: fields[2] as String,
       images: fields[3] as String,
-      view: fields[4] as int,
+      view: fields[4] as String,
       time: fields[5] as String,
       timeAgo: fields[6] as String,
       category: fields[7] as String,

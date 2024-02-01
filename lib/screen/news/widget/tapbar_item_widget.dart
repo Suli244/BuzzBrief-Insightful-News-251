@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
 import 'package:insightful_news_251/screen/news/news_dateil_screen.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 import 'package:insightful_news_251/style/app_colors.dart';
 import 'package:insightful_news_251/utils/images/app_images.dart';
 
@@ -10,15 +12,29 @@ class TapBarItemWidget extends StatefulWidget {
   const TapBarItemWidget({
     super.key,
     required this.model,
+    required this.index,
   });
   final NewsModel model;
+  final int index;
 
   @override
   State<TapBarItemWidget> createState() => _TapBarItemWidgetState();
 }
 
 class _TapBarItemWidgetState extends State<TapBarItemWidget> {
-  bool isSave = false;
+  bool isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initIsFavorite();
+  }
+
+  initIsFavorite() async {
+    isFavorite =
+        await SavedHive.hasData(group: widget.model.category, id: widget.index);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,17 +129,33 @@ class _TapBarItemWidgetState extends State<TapBarItemWidget> {
             ),
             InkWell(
               onTap: () {
+                if (isFavorite) {
+                  SavedHive.deleteData(
+                      id: widget.index, group: widget.model.category);
+                } else {
+                  SavedHive.dataToCache(
+                      group: widget.model.category,
+                      data: SavedModel(
+                          id: widget.index,
+                          time: widget.model.ago,
+                          category: widget.model.category,
+                          desciption: widget.model.description,
+                          timeAgo: widget.model.ago,
+                          title: widget.model.title,
+                          view: widget.model.read,
+                          images: widget.model.image));
+                }
                 setState(() {
-                  isSave = !isSave;
+                  isFavorite = !isFavorite;
                 });
               },
               child: Padding(
                 padding: EdgeInsets.only(top: 10.h, right: 14.w),
                 child: Image.asset(
-                  isSave
+                  isFavorite
                       ? AppImages.saveCheckMarkiconIcon
                       : AppImages.savedIcon,
-                  width: isSave ? 15.w : 11.w,
+                  width: isFavorite ? 15.w : 11.w,
                 ),
               ),
             ),

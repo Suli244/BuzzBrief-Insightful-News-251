@@ -230,6 +230,7 @@ class _NewsScreenState extends State<NewsScreen> {
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (context, index) => TapBarItemWidget(
+                                index: index,
                                 model: modelList[index],
                               ),
                               separatorBuilder: (context, index) =>

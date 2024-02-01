@@ -67,34 +67,6 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             )),
-                        InkWell(
-                          onTap: () {
-                            //       if (isFavorite) {
-                            //   SavedHive.deleteData(
-                            //       id: widget.index, group: widget.type);
-                            // } else {
-                            SavedHive.dataToCache(
-                                group: 'Business',
-                                data: SavedModel(
-                                    id: 0,
-                                    category: 'Business',
-                                    time: '32',
-                                    desciption: '23',
-                                    title: '3242',
-                                    view: 234,
-                                    images: 'https://i.ibb.co/Ycy56TY/2.png',
-                                    timeAgo: ''));
-                            // }
-                            // setState(() {
-                            //   isFavorite = !isFavorite;
-                            // });
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            color: Colors.black,
-                          ),
-                        ),
                         SizedBox(height: 24.h),
                         ValueListenableBuilder(
                           valueListenable: box.listenable(),
@@ -132,7 +104,7 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                               crossAxisCount: 2,
                               itemBuilder: (context, index) => InkWell(
                                 onTap: () async {
-                                  Navigator.push(
+                                  final aaa = await Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
@@ -142,6 +114,11 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                                                 category: newList.keys
                                                     .toList()[index],
                                               )));
+                                  print('object % $aaa');
+
+                                  setState(() {
+                                    initBox();
+                                  });
                                 },
                                 child: newList.values.toList()[index] != null
                                     ? Stack(
