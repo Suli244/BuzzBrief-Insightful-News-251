@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
 import 'package:insightful_news_251/screen/news/widget/reading_time_widget.dart';
 import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NewsDateilScreen extends StatelessWidget {
   const NewsDateilScreen({super.key, required this.model});
@@ -33,7 +34,7 @@ class NewsDateilScreen extends StatelessWidget {
             actions: [
               IconButton(
                 iconSize: 24,
-                onPressed: () {},
+                onPressed: () => Share.share(model.image),
                 icon: Image.asset(
                   AppImages.shareIcon,
                   width: 24,
