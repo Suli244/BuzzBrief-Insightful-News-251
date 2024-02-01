@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/famous_journalists/data/models/journalists_model.dart';
 import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:share_plus/share_plus.dart';
 
 class JournalistDetailPage extends StatelessWidget {
   const JournalistDetailPage({super.key, required this.model});
@@ -99,9 +100,12 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(right: 15),
-                child: Image.asset(
-                  AppImages.shareIcon,
-                  scale: 3,
+                child: GestureDetector(
+                  onTap: () => Share.share(model.image),
+                  child: Image.asset(
+                    AppImages.shareIcon,
+                    scale: 3,
+                  ),
                 ),
               ),
             ],
