@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_category_screen.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 
@@ -99,7 +100,7 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                           valueListenable: box.listenable(),
                           builder: (context, value, child) {
                             Map<dynamic, dynamic>? savedList = box.get(_key);
-                            Map<String, List<SavedModel>> newList = {
+                            Map<String, dynamic> newList = {
                               'All News': [],
                               'Business': [],
                               'Politics': [],
@@ -108,8 +109,9 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                               'Science': [],
                             };
                             savedList?.forEach((key1, value1) {
-                              if (value.isNotEmpty) {
+                              if (value1.isNotEmpty) {
                                 newList.forEach((key2, value2) {
+                                  print('value1 $value1 value2 $value2');
                                   if (key2 == 'All News') {
                                     newList[key2]?.addAll(value1);
                                   } else {
@@ -130,15 +132,16 @@ class _SavedNewsScreenState extends State<SavedNewsScreen> {
                               crossAxisCount: 2,
                               itemBuilder: (context, index) => InkWell(
                                 onTap: () async {
-                                  // Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //         builder: (context) => SavedDetailPage(
-                                  //               data: newList.values
-                                  //                   .toList()[index],
-                                  //               group:
-                                  //                   newList.keys.toList()[index],
-                                  //             )));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SavedCategoryScreen(
+                                                list: newList.values
+                                                    .toList()[index],
+                                                category: newList.keys
+                                                    .toList()[index],
+                                              )));
                                 },
                                 child: newList.values.toList()[index] != null
                                     ? Stack(
