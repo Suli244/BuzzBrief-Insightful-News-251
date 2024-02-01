@@ -13,7 +13,7 @@ class JournalistDetailPage extends StatelessWidget {
           SliverPersistentHeader(
             delegate: MySliverAppBar(
               model: model,
-              expandedHeight: 200,
+              expandedHeight: 400,
             ),
           ),
           SliverList(
@@ -64,13 +64,10 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
                 image: NetworkImage(model.image, scale: 3.5),
                 fit: BoxFit.cover,
               ),
-              gradient: LinearGradient(
-                colors: [Colors.red, Colors.white.withOpacity(0.5)],
-              ),
             ),
           ),
         ),
-        Container(
+        AnimatedContainer(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomCenter,
@@ -82,6 +79,7 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
               ],
             ),
           ),
+          duration: const Duration(seconds: 5),
         ),
         SafeArea(
           child: IconButton(
@@ -102,7 +100,7 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
             child: SizedBox(
               height: expandedHeight,
               width: MediaQuery.of(context).size.width / 2,
-              child: Container(
+              child: Align(
                 alignment: Alignment.center,
                 child: Text(
                   model.name,

@@ -156,8 +156,7 @@ class JournalistBody extends StatelessWidget {
             ),
           ),
         ),
-        Hero(
-          tag: 'name${model.name}',
+        Flexible(
           child: Text(
             model.name,
             textAlign: TextAlign.center,
@@ -166,22 +165,13 @@ class JournalistBody extends StatelessWidget {
               fontSize: 15,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ),
-        const SizedBox(height: 12),
-        Container(
-          width: 327,
-          decoration: ShapeDecoration(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(
-                width: 0.50,
-                strokeAlign: BorderSide.strokeAlignCenter,
-                color: Colors.black.withOpacity(0.4000000059604645),
-              ),
-            ),
-          ),
-        )
+        Divider(
+          color: Colors.black.withOpacity(0.4000000059604645),
+        ),
       ],
     );
   }
