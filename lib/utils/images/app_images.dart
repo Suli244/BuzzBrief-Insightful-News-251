@@ -9,6 +9,7 @@ class AppImages {
   AppImages._();
   
   static const String famousJournalistsIcon = 'assets/images/famous_journalists_icon.png';  
+  static const String lineIcon = 'assets/images/line_icon.png';  
   static const String logo = 'assets/images/logo.png';  
   static const String newsIcon = 'assets/images/news_icon.png';  
   static const String notificationNoIcon = 'assets/images/notification_no_icon.png';  
