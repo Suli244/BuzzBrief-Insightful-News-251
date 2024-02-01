@@ -18,6 +18,8 @@ class AppImages {
   static const String onboardingThree = 'assets/images/onboarding_three.png';  
   static const String onboardingTwo = 'assets/images/onboarding_two.png';  
   static const String saveCheckMarkiconIcon = 'assets/images/save_check_markicon_icon.png';  
+  static const String saveNewsIcon = 'assets/images/save_news_icon.png';  
+  static const String saveNewsTwoIcon = 'assets/images/save_news_two_icon.png';  
   static const String savedIcon = 'assets/images/saved_icon.png';  
   static const String savedNewsIcon = 'assets/images/saved_news_icon.png';  
   static const String settingsIcon = 'assets/images/settings_icon.png';  
