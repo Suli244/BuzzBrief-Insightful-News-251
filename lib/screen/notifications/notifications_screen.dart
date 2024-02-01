@@ -32,47 +32,59 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
               ),
               const SizedBox(height: 8),
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'You have ',
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.6000000238418579),
-                        fontSize: 16,
-                        fontFamily: 'SF Pro Text',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    TextSpan(
-                      text: notifications.isNotEmpty
-                          ? '${notifications.length} notifications'
-                          : 'no notifications',
-                      style: const TextStyle(
-                        color: Color(0xFF00B2FF),
-                        fontSize: 16,
-                        fontFamily: 'SF Pro Text',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' today',
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.6000000238418579),
-                        fontSize: 16,
-                        fontFamily: 'SF Pro Text',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
+              Text(
+                'You have no notifications today',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),
+                  fontSize: 16,
+                  fontFamily: 'SF Pro Text',
+                  fontWeight: FontWeight.w500,
                 ),
               ),
+
+              // Text.rich(
+              //   TextSpan(
+              //     children: [
+              //       TextSpan(
+              //         text: 'You have ',
+              //         style: TextStyle(
+              //           color: Colors.black.withOpacity(0.6000000238418579),
+              //           fontSize: 16,
+              //           fontFamily: 'SF Pro Text',
+              //           fontWeight: FontWeight.w500,
+              //         ),
+              //       ),
+              //       TextSpan(
+              //         text: notifications.isNotEmpty
+              //             ? '${notifications.length} notifications'
+              //             : 'no notifications',
+              //         style: const TextStyle(
+              //           color: Color(0xFF00B2FF),
+              //           fontSize: 16,
+              //           fontFamily: 'SF Pro Text',
+              //           fontWeight: FontWeight.w500,
+              //         ),
+              //       ),
+              //       TextSpan(
+              //         text: ' today',
+              //         style: TextStyle(
+              //           color: Colors.black.withOpacity(0.6000000238418579),
+              //           fontSize: 16,
+              //           fontFamily: 'SF Pro Text',
+              //           fontWeight: FontWeight.w500,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               const SizedBox(height: 10),
-              notifications.isEmpty
-                  ? Image.asset(
-                      AppImages.notificationNoIcon,
-                      scale: 3,
-                      width: double.infinity,
+              notifications.isNotEmpty
+                  ? Expanded(
+                      child: Image.asset(
+                        AppImages.notificationNoIcon,
+                        scale: 3,
+                        width: double.infinity,
+                      ),
                     )
                   : Expanded(
                       child: ListView.separated(
@@ -94,7 +106,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                                       image:
                                           'https://images.pexels.com/photos/433989/pexels-photo-433989.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
                                       ago: '1 min ago',
-                                      typeOfNotify: 'Bissness', des: desc,
+                                      typeOfNotify: 'Bissness',
+                                      des: desc,
                                     ),
                                   ),
                                 ),
@@ -247,6 +260,5 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   }
 }
 
-
-
-String desc = 'The owner of Louis Vuitton, Moët & Chandon and Hennessy, as well as brands including Givenchy, Bulgari and Sephora, on Thursday night reported sales amounting to 86.15 billion euros (\$93.34 billion) for 2023, exceeding consensus forecasts and equating to 13% organic growth from the previous year. Organic revenue was up 10% in the fourth quarter. The result was boosted in particular by 14% annual growth in the critical fashion and leather goods sector, along with 11% growth in perfumes and cosmetics. Wines and spirits meanwhile posted a 4% decline. The Paris-listed stock provisionally closed Friday’s session nearly 13% higher. “Our performance in 2023 illustrates the exceptional appeal of our Maisons and their ability to spark desire, despite a year affected by economic and geopolitical challenges,” Bernard Arnault, chairman and CEO of LVMH, said in a statement. “While remaining vigilant in the current context, we enter 2024 with confidence, backed by our highly desirable brands and our agile teams.” After a boom during the pandemic, the luxury sector endured a rough end to 2023 as challenging geopolitical and macroeconomic conditions weighed on consumer spending, particularly in the U.S. and China.';
+String desc =
+    'The owner of Louis Vuitton, Moët & Chandon and Hennessy, as well as brands including Givenchy, Bulgari and Sephora, on Thursday night reported sales amounting to 86.15 billion euros (\$93.34 billion) for 2023, exceeding consensus forecasts and equating to 13% organic growth from the previous year. Organic revenue was up 10% in the fourth quarter. The result was boosted in particular by 14% annual growth in the critical fashion and leather goods sector, along with 11% growth in perfumes and cosmetics. Wines and spirits meanwhile posted a 4% decline. The Paris-listed stock provisionally closed Friday’s session nearly 13% higher. “Our performance in 2023 illustrates the exceptional appeal of our Maisons and their ability to spark desire, despite a year affected by economic and geopolitical challenges,” Bernard Arnault, chairman and CEO of LVMH, said in a statement. “While remaining vigilant in the current context, we enter 2024 with confidence, backed by our highly desirable brands and our agile teams.” After a boom during the pandemic, the luxury sector endured a rough end to 2023 as challenging geopolitical and macroeconomic conditions weighed on consumer spending, particularly in the U.S. and China.';
