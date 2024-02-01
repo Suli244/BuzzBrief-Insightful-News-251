@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/famous_journalists/data/models/journalists_model.dart';
+import 'package:insightful_news_251/utils/images/app_images.dart';
 
 class JournalistDetailPage extends StatelessWidget {
   const JournalistDetailPage({super.key, required this.model});
@@ -19,7 +21,7 @@ class JournalistDetailPage extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                SizedBox(height: (16 + model.name.length).toDouble()),
+                SizedBox(height: 30.h),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
@@ -82,14 +84,27 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
           duration: const Duration(seconds: 5),
         ),
         SafeArea(
-          child: IconButton(
-            splashRadius: 1,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-            ),
+          child: Row(
+            children: [
+              IconButton(
+                splashRadius: 1,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Image.asset(
+                  AppImages.shareIcon,
+                  scale: 3,
+                ),
+              ),
+            ],
           ),
         ),
         Positioned(
