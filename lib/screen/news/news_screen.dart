@@ -2,14 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insightful_news_251/dsfadfad/asdfas.dart';
 import 'package:insightful_news_251/screen/news/news_cubit/news_cubit.dart';
 import 'package:insightful_news_251/screen/news/news_dateil_screen.dart';
 import 'package:insightful_news_251/screen/news/widget/reading_time_widget.dart';
 import 'package:insightful_news_251/screen/news/widget/tapbar_item_widget.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
-import 'package:insightful_news_251/style/app_colors.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});
@@ -172,8 +172,8 @@ class _NewsScreenState extends State<NewsScreen> {
                                               },
                                               child: Image.asset(
                                                 isSavee
-                                                    ? AppImages.saveNewsTwoIcon
-                                                    : AppImages.saveNewsIcon,
+                                                    ? Gdsgsg.saveNewsTwoIcon
+                                                    : Gdsgsg.saveNewsIcon,
                                                 width: 26.w,
                                                 height: 26.h,
                                               ),

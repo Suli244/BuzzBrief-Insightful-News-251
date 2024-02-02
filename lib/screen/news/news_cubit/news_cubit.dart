@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
-import 'package:insightful_news_251/utils/urls.dart';
+import 'package:insightful_news_251/utils/kks.dart';
 
 part 'news_state.dart';
 part 'news_cubit.freezed.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 import 'package:share_plus/share_plus.dart';
 
 class NotificationDetailPage extends StatelessWidget {
@@ -58,7 +58,7 @@ class NotificationDetailPage extends StatelessWidget {
                       Share.share(model.image);
                     },
                     child: Image.asset(
-                      AppImages.shareIcon,
+                      Gdsgsg.shareIcon,
                       scale: 3,
                     ),
                   ),

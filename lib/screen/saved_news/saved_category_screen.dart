@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insightful_news_251/dsfadfad/asdfas.dart';
 import 'package:insightful_news_251/screen/notifications/child_pages/notification_detail_page.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
-import 'package:insightful_news_251/style/app_colors.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 
 class SavedCategoryScreen extends StatefulWidget {
   const SavedCategoryScreen({
@@ -218,9 +218,7 @@ class _ItemSavedState extends State<ItemSaved> {
               child: Padding(
                 padding: EdgeInsets.only(top: 10.h, right: 14.w),
                 child: Image.asset(
-                  isFavorite
-                      ? AppImages.saveCheckMarkiconIcon
-                      : AppImages.savedIcon,
+                  isFavorite ? Gdsgsg.saveCheckMarkiconIcon : Gdsgsg.savedIcon,
                   width: isFavorite ? 15.w : 11.w,
                 ),
               ),

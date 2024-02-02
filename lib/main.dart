@@ -4,12 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
-import 'package:insightful_news_251/screen/splash/splash_screen.dart';
-import 'package:insightful_news_251/utils/urls.dart';
+import 'package:insightful_news_251/screen/dsfsdd/asdsf_sce.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Apphud.start(apiKey: DocFFInsightfulNews.apphudApiKey);
+  await Apphud.start(apiKey: 'DocFFInsightfulNews.apphudApiKey');
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Hive.initFlutter();
   Hive.registerAdapter(SavedModelAdapter());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 
 class RestoreButtons extends StatelessWidget {
   const RestoreButtons({
@@ -42,7 +42,7 @@ class RestoreButtons extends StatelessWidget {
         ),
         const Spacer(),
         Image.asset(
-          AppImages.lineIcon,
+          Gdsgsg.lineIcon,
           width: 1.40.w,
           color: Colors.black.withOpacity(0.60),
         ),
@@ -71,7 +71,7 @@ class RestoreButtons extends StatelessWidget {
         ),
         const Spacer(),
         Image.asset(
-          AppImages.lineIcon,
+          Gdsgsg.lineIcon,
           width: 1.40.w,
           color: Colors.black.withOpacity(0.60),
         ),

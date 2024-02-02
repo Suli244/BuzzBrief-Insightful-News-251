@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
 import 'package:insightful_news_251/screen/news/widget/reading_time_widget.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 import 'package:share_plus/share_plus.dart';
 
 class NewsDateilScreen extends StatelessWidget {
@@ -36,7 +36,7 @@ class NewsDateilScreen extends StatelessWidget {
                 iconSize: 24,
                 onPressed: () => Share.share(model.image),
                 icon: Image.asset(
-                  AppImages.shareIcon,
+                  Gdsgsg.shareIcon,
                   width: 24,
                 ),
               ),

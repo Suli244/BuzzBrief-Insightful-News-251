@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
-import 'package:insightful_news_251/screen/settings/widget/settings_item_widget.dart';
-import 'package:insightful_news_251/utils/urls.dart';
+import 'package:insightful_news_251/screen/afasfasf/widget/settings_item_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -35,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const WebFFInsightfulNews(
                       title: 'Privacy Policy',
-                      url: DocFFInsightfulNews.pP,
+                      url: '',
                     ),
                   ),
                 );
@@ -56,7 +55,7 @@ class SettingsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const WebFFInsightfulNews(
                       title: 'Term of use',
-                      url: DocFFInsightfulNews.tUse,
+                      url: 'DocFFInsightfulNews.tUse',
                     ),
                   ),
                 );

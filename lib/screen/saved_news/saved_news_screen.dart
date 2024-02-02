@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_category_screen.dart';
-import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
-import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 
 const _key = 'saved';
 

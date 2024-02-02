@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:insightful_news_251/screen/famous_journalists/data/models/journalists_model.dart';
-import 'package:insightful_news_251/utils/urls.dart';
+import 'package:insightful_news_251/utils/kks.dart';
 
 part 'journalist_cubit.freezed.dart';
 part 'journalist_state.dart';

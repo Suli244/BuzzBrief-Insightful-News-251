@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insightful_news_251/dsfadfad/asdfas.dart';
+import 'package:insightful_news_251/screen/afasfasf/sdadfs_scren.dart';
 import 'package:insightful_news_251/screen/famous_journalists/presentation/cubit/journalist_cubit.dart';
 import 'package:insightful_news_251/screen/famous_journalists/presentation/pages/journalists_page.dart';
 import 'package:insightful_news_251/screen/news/news_screen.dart';
 import 'package:insightful_news_251/screen/notifications/notifications_screen.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_news_screen.dart';
-import 'package:insightful_news_251/screen/settings/settings_screen.dart';
-import 'package:insightful_news_251/style/app_colors.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 
-class BottomNavigatorScreen extends StatefulWidget {
-  const BottomNavigatorScreen({Key? key}) : super(key: key);
+class GFEdgsrgsd extends StatefulWidget {
+  const GFEdgsrgsd({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigatorScreen> createState() => _BottomNavigatorState();
+  State<GFEdgsrgsd> createState() => _BottomNavigatorState();
 }
 
-class _BottomNavigatorState extends State<BottomNavigatorScreen> {
+class _BottomNavigatorState extends State<GFEdgsrgsd> {
   int index = 0;
   @override
   Widget build(BuildContext context) {
@@ -41,12 +41,12 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: Image.asset(
-                AppImages.newsIcon,
+                Gdsgsg.newsIcon,
                 width: 24.50,
                 color: AppColorsInsightfulNews.color00000060,
               ),
               activeIcon: Image.asset(
-                AppImages.newsIcon,
+                Gdsgsg.newsIcon,
                 color: AppColorsInsightfulNews.color00B2FF,
                 width: 24.50,
               ),
@@ -54,12 +54,12 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: Image.asset(
-                AppImages.famousJournalistsIcon,
+                Gdsgsg.famousJournalistsIcon,
                 width: 28,
                 color: AppColorsInsightfulNews.color00000060,
               ),
               activeIcon: Image.asset(
-                AppImages.famousJournalistsIcon,
+                Gdsgsg.famousJournalistsIcon,
                 color: AppColorsInsightfulNews.color00B2FF,
                 width: 28,
               ),
@@ -67,12 +67,12 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: Image.asset(
-                AppImages.savedNewsIcon,
+                Gdsgsg.savedNewsIcon,
                 width: 19,
                 color: AppColorsInsightfulNews.color00000060,
               ),
               activeIcon: Image.asset(
-                AppImages.savedNewsIcon,
+                Gdsgsg.savedNewsIcon,
                 color: AppColorsInsightfulNews.color00B2FF,
                 width: 19,
               ),
@@ -80,12 +80,12 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: Image.asset(
-                AppImages.notificationsIcon,
+                Gdsgsg.notificationsIcon,
                 width: 22,
                 color: AppColorsInsightfulNews.color00000060,
               ),
               activeIcon: Image.asset(
-                AppImages.notificationsIcon,
+                Gdsgsg.notificationsIcon,
                 color: AppColorsInsightfulNews.color00B2FF,
                 width: 22,
               ),
@@ -93,12 +93,12 @@ class _BottomNavigatorState extends State<BottomNavigatorScreen> {
             BottomNavigationBarItem(
               label: '',
               icon: Image.asset(
-                AppImages.settingsIcon,
+                Gdsgsg.settingsIcon,
                 width: 24.50,
                 color: AppColorsInsightfulNews.color00000060,
               ),
               activeIcon: Image.asset(
-                AppImages.settingsIcon,
+                Gdsgsg.settingsIcon,
                 color: AppColorsInsightfulNews.color00B2FF,
                 width: 24.50,
               ),

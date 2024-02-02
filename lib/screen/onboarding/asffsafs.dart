@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insightful_news_251/screen/bottom_navigation_bar/bottom_naviator_screen.dart';
+import 'package:insightful_news_251/dsfadfad/asdfas.dart';
+import 'package:insightful_news_251/screen/bottom_navigation_bar/sdfadfaf.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/button_widget.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/onboarding_item_widget.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/restore_widgets.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
-import 'package:insightful_news_251/style/app_colors.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
-import 'package:insightful_news_251/utils/premium/first_open.dart';
-import 'package:insightful_news_251/utils/urls.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
+import 'package:insightful_news_251/utils/premium/fadf.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+class Fssdsdg extends StatefulWidget {
+  const Fssdsdg({super.key});
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<Fssdsdg> createState() => _FssdsdgState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _FssdsdgState extends State<Fssdsdg> {
   final PageController controller = PageController();
   int currantPage = 0;
 
@@ -37,19 +36,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
               children: const [
                 OnboardingItemWidger(
-                  foto: AppImages.onboardingOne,
+                  foto: Gdsgsg.onboardingOne,
                   textOne: 'Welcome to the World\nof News!',
                   textTwo:
                       'Read only fresh and relevant world\nnews collected for you',
                 ),
                 OnboardingItemWidger(
-                  foto: AppImages.onboardingTwo,
+                  foto: Gdsgsg.onboardingTwo,
                   textOne: 'Receive News\nNotifications',
                   textTwo:
                       'News are updated every day and stay\nup to date with all events',
                 ),
                 OnboardingItemWidger(
-                  foto: AppImages.onboardingThree,
+                  foto: Gdsgsg.onboardingThree,
                   textOne: 'Discover Famous\nJournalists',
                   textTwo:
                       'Learn more about famous world\njournalists and their contributions',
@@ -82,12 +81,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  const BottomNavigatorScreen(),
+                              builder: (context) => const GFEdgsrgsd(),
                             ),
                             (protected) => false,
                           );
-                          await FirstOpenInsightfulNews.setFirstOpen();
+                          await FirstOpenInsightfulNews.sop();
                         } else {
                           controller.nextPage(
                             duration: const Duration(milliseconds: 300),
@@ -107,7 +105,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           MaterialPageRoute(
                             builder: (context) => const WebFFInsightfulNews(
                               title: 'Term of use',
-                              url: DocFFInsightfulNews.tUse,
+                              url: 'DocFFInsightfulNews.tUse',
                             ),
                           ),
                         );
@@ -119,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           MaterialPageRoute(
                             builder: (context) => const WebFFInsightfulNews(
                               title: 'Privacy Policy',
-                              url: DocFFInsightfulNews.pP,
+                              url: 'DocFFInsightfulNews.pP',
                             ),
                           ),
                         );

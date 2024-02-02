@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insightful_news_251/style/app_colors.dart';
+import 'package:insightful_news_251/dsfadfad/asdfas.dart';
 
 class ReadingTimeWidget extends StatelessWidget {
   const ReadingTimeWidget({

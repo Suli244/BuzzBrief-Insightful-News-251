@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:insightful_news_251/screen/notifications/child_pages/notification_detail_page.dart';
-import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
@@ -81,7 +81,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               notifications.isNotEmpty
                   ? Expanded(
                       child: Image.asset(
-                        AppImages.notificationNoIcon,
+                        Gdsgsg.notificationNoIcon,
                         scale: 3,
                         width: double.infinity,
                       ),
@@ -208,7 +208,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                                               ),
                                               const Spacer(),
                                               Image.asset(
-                                                AppImages.saveCheckMarkiconIcon,
+                                                Gdsgsg.saveCheckMarkiconIcon,
                                                 scale: 3.7,
                                               ),
                                             ],
