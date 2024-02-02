@@ -15,13 +15,16 @@ class SavedHive {
       dB = await Hive.openBox(_key);
     }
     Map<dynamic, dynamic>? list = dB.get(_key);
-
-    for (var e in list?[group]) {
-      print('eee $e $id');
-      if (e.id == id) {
-        return true;
+    if (list != null) {
+      if (list[group] != null) {
+        for (var e in list[group]) {
+          if (e.id == id) {
+            return true;
+          }
+        }
       }
     }
+
     return false;
   }
 

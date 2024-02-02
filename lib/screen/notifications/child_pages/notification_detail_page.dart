@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/utils/images/app_images.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NotificationDetailPage extends StatelessWidget {
   const NotificationDetailPage(this.model, {super.key});
@@ -52,9 +53,14 @@ class NotificationDetailPage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Image.asset(
-                    AppImages.shareIcon,
-                    scale: 3,
+                  InkWell(
+                    onTap: () async {
+                      Share.share(model.image);
+                    },
+                    child: Image.asset(
+                      AppImages.shareIcon,
+                      scale: 3,
+                    ),
                   ),
                 ],
               ),

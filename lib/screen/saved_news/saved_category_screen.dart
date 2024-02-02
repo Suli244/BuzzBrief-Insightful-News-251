@@ -54,22 +54,20 @@ class _SavedCategoryScreenState extends State<SavedCategoryScreen> {
                             fontWeight: FontWeight.w500,
                             color: Colors.black.withOpacity(0.6))),
                   )
-                : Expanded(
-                    child: ListView.separated(
-                      padding: const EdgeInsets.symmetric(vertical: 24),
-                      physics: const AlwaysScrollableScrollPhysics(),
-                      itemCount: widget.list.length,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(height: 16);
-                      },
-                      itemBuilder: (BuildContext context, int index) {
-                        return ItemSaved(
-                          index: index,
-                          list: widget.list,
-                          category: widget.category,
-                        );
-                      },
-                    ),
+                : ListView.separated(
+                    padding: const EdgeInsets.symmetric(vertical: 24),
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    itemCount: widget.list.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return const SizedBox(height: 16);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return ItemSaved(
+                        index: index,
+                        list: widget.list,
+                        category: widget.category,
+                      );
+                    },
                   ),
           ),
         ),
