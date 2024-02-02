@@ -6,6 +6,8 @@ import 'package:insightful_news_251/screen/news/news_cubit/news_cubit.dart';
 import 'package:insightful_news_251/screen/news/news_dateil_screen.dart';
 import 'package:insightful_news_251/screen/news/widget/reading_time_widget.dart';
 import 'package:insightful_news_251/screen/news/widget/tapbar_item_widget.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 import 'package:insightful_news_251/style/app_colors.dart';
 import 'package:insightful_news_251/utils/images/app_images.dart';
 
@@ -63,7 +65,15 @@ class _NewsScreenState extends State<NewsScreen> {
               ),
               SizedBox(height: 16.h),
               Expanded(
-                child: BlocBuilder<NewsCubit, NewsState>(
+                child: BlocConsumer<NewsCubit, NewsState>(
+                  listener: (context, state) {
+                    state.whenOrNull(
+                      success: (model) async {
+                        isSavee = await SavedHive.hasData(
+                            group: model.first.category, id: 0);
+                      },
+                    );
+                  },
                   builder: (context, state) {
                     return state.when(
                       loading: () => const Center(
@@ -126,9 +136,39 @@ class _NewsScreenState extends State<NewsScreen> {
                                           children: [
                                             InkWell(
                                               onTap: () {
+                                                if (isSavee) {
+                                                  SavedHive.deleteData(
+                                                      id: 0,
+                                                      group: modelList
+                                                          .first.category);
+                                                } else {
+                                                  SavedHive.dataToCache(
+                                                      group: modelList
+                                                          .first.category,
+                                                      data: SavedModel(
+                                                          id: 0,
+                                                          time: modelList
+                                                              .first.ago,
+                                                          category: modelList
+                                                              .first.category,
+                                                          desciption: modelList
+                                                              .first
+                                                              .description,
+                                                          timeAgo: modelList
+                                                              .first.ago,
+                                                          title: modelList
+                                                              .first.title,
+                                                          view: modelList
+                                                              .first.read,
+                                                          images: modelList
+                                                              .first.image));
+                                                }
                                                 setState(() {
                                                   isSavee = !isSavee;
                                                 });
+                                                context
+                                                    .read<NewsCubit>()
+                                                    .getNewsData(selectTab);
                                               },
                                               child: Image.asset(
                                                 isSavee
