@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
 import 'package:insightful_news_251/screen/afasfasf/widget/settings_item_widget.dart';
+import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -34,7 +34,8 @@ class SettingsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const WebFFInsightfulNews(
                       title: 'Privacy Policy',
-                      url: '',
+                      url:
+                          'https://docs.google.com/document/d/1aOj5DbGhxOOucsbQ0YtKfFjoRt-8j60Bb4fhxDRa12U/edit?usp=sharing',
                     ),
                   ),
                 );
@@ -55,7 +56,8 @@ class SettingsScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const WebFFInsightfulNews(
                       title: 'Term of use',
-                      url: 'DocFFInsightfulNews.tUse',
+                      url:
+                          'https://docs.google.com/document/d/1oRCRubxKVVfzxyL4hN262IUkLb07MY0hdhnwN7PMYQ4/edit?usp=sharing',
                     ),
                   ),
                 );
@@ -70,7 +72,17 @@ class SettingsScreen extends StatelessWidget {
             ),
             SettingItemWidget(
               title: 'Support',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WebFFInsightfulNews(
+                      title: 'Support',
+                      url: 'https://forms.gle/TXsbNEFLdb5e4Y9u8',
+                    ),
+                  ),
+                );
+              },
               top: 20.h,
               bottom: 20.h,
             ),
