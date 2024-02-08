@@ -6,24 +6,24 @@ part of 'prem_hive_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class NewPosterModelAdapter extends TypeAdapter<NewPosterModel> {
+class GjhkdafjlafAdapter extends TypeAdapter<Gjhkdafjlaf> {
   @override
   final int typeId = 5;
 
   @override
-  NewPosterModel read(BinaryReader reader) {
+  Gjhkdafjlaf read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return NewPosterModel(
+    return Gjhkdafjlaf(
       secondUrl: fields[0] as String,
       isOpen: fields[1] as bool,
     );
   }
 
   @override
-  void write(BinaryWriter writer, NewPosterModel obj) {
+  void write(BinaryWriter writer, Gjhkdafjlaf obj) {
     writer
       ..writeByte(2)
       ..writeByte(0)
@@ -38,7 +38,7 @@ class NewPosterModelAdapter extends TypeAdapter<NewPosterModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is NewPosterModelAdapter &&
+      other is GjhkdafjlafAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_review/in_app_review.dart';
-import 'package:insightful_news_251/l_p/get_premium/fb_model.dart';
-import 'package:insightful_news_251/l_p/get_premium/get_prem_hive_repo.dart';
-import 'package:insightful_news_251/l_p/get_premium/prem_hive_model/prem_hive_model.dart';
+import 'package:insightful_news_251/l_p/dffgdfg/dsafasdfaf/prem_hive_model.dart';
+import 'package:insightful_news_251/l_p/dffgdfg/sasfdsf.dart';
+import 'package:insightful_news_251/l_p/dffgdfg/safffs.dart';
 import 'package:insightful_news_251/l_p/uajds.dart';
 import 'package:insightful_news_251/main.dart';
 import 'package:insightful_news_251/utils/kks.dart';
 
 premidsfjb() async {
-  final NewPosterModel? model = await GetPremHiveRepo().getData();
+  final Gjhkdafjlaf? model = await HJKHEfdf().fff();
   if (model != null) {
     if (model.isOpen) {
       runApp(
@@ -27,20 +27,20 @@ premidsfjb() async {
     final dio = Dio();
     try {
       final result = await dio.get(fbUrl('premium'));
-      final fBResponseModel = FBResponseModel.fromJson(result.data);
-      await GetPremHiveRepo().setData(
-        NewPosterModel(
-          secondUrl: '${fBResponseModel.fasfa3}${fBResponseModel.dfafsd4}',
-          isOpen: fBResponseModel.isPr,
+      final asdfad = KJDFLadf.fromJson(result.data);
+      await HJKHEfdf().sssss(
+        Gjhkdafjlaf(
+          secondUrl: '${asdfad.fasfa3}${asdfad.dfafsd4}',
+          isOpen: asdfad.isPr,
         ),
       );
 
-      if (fBResponseModel.isPr) {
+      if (asdfad.isPr) {
         runApp(
           MaterialApp(
             debugShowCheckedModeBanner: false,
             home: EDjahPage(
-              link: '${fBResponseModel.arar1}${fBResponseModel.fdadf2}',
+              link: '${asdfad.arar1}${asdfad.fdadf2}',
             ),
           ),
         );
