@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
+import 'package:insightful_news_251/l_p/get_premium/prem_hive_model/prem_hive_model.dart';
+import 'package:insightful_news_251/l_p/safsaf.dart';
 import 'package:insightful_news_251/screen/dsfsdd/asdsf_sce.dart';
+import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +14,8 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Hive.initFlutter();
   Hive.registerAdapter(SavedModelAdapter());
-  runApp(const MyApp());
+  Hive.registerAdapter(NewPosterModelAdapter());
+  premidsfjb();
 }
 
 class MyApp extends StatelessWidget {

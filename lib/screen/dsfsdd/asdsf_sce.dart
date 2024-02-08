@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:in_app_review/in_app_review.dart';
 import 'package:insightful_news_251/screen/bottom_navigation_bar/sdfadfaf.dart';
 import 'package:insightful_news_251/screen/onboarding/asffsafs.dart';
 import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
@@ -50,15 +49,6 @@ class _SplashScreenState extends State<SplashScreen> {
           builder: (context) => const Fssdsdg(),
         ),
       );
-      await Future.delayed(const Duration(seconds: 8));
-      try {
-        final InAppReview inAppReview = InAppReview.instance;
-        if (await inAppReview.isAvailable()) {
-          inAppReview.requestReview();
-        }
-      } catch (e) {
-        throw Exception(e);
-      }
     } else {
       Navigator.pushReplacement(
         context,
