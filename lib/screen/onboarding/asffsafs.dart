@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/dsfadfad/asdfas.dart';
+import 'package:insightful_news_251/screen/bottom_navigation_bar/sdfadfaf.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/button_widget.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/onboarding_item_widget.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/restore_widgets.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
-import 'package:insightful_news_251/screen/premium/premium.dart';
 import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
 import 'package:insightful_news_251/utils/premium/fadf.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -81,7 +81,7 @@ class _FssdsdgState extends State<Fssdsdg> {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Premium(),
+                              builder: (context) => const GFEdgsrgsd(),
                             ),
                             (protected) => false,
                           );

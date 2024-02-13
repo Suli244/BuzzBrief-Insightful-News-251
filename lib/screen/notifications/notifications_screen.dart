@@ -1,16 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
 import 'package:insightful_news_251/screen/news/news_cubit/news_cubit.dart';
 import 'package:insightful_news_251/screen/notifications/child_pages/notification_detail_page.dart';
-import 'package:insightful_news_251/screen/premium/premium.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
@@ -21,20 +18,6 @@ class NotificationsScreen extends StatefulWidget {
 
 class _NotificationsScreenState extends State<NotificationsScreen> {
   @override
-  void initState() {
-    getPrem();
-    super.initState();
-  }
-
-  bool isPrem = false;
-
-  getPrem() async {
-    final prefs = await SharedPreferences.getInstance();
-    isPrem = prefs.getBool('buy') ?? false;
-    setState(() {});
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NewsCubit()..getNewsData('All News'),
@@ -42,8 +25,16 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: !isPrem
-                ? Column(
+            child: BlocBuilder<NewsCubit, NewsState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator.adaptive()),
+                  error: (error) => Center(
+                    child: Text(error),
+                  ),
+                  success: (model) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
                         'Notifications',
@@ -54,117 +45,63 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      const Spacer(),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) => const Premium(
-                                isPrem: true,
-                              ),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: const Color(0xff00B2FF),
-                          ),
-                          child: const Text(
-                            'Buy Premium for \$0,99',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              fontFamily: 'SF Pro Text',
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 33),
-                    ],
-                  )
-                : BlocBuilder<NewsCubit, NewsState>(
-                    builder: (context, state) {
-                      return state.when(
-                        loading: () => const Center(
-                            child: CircularProgressIndicator.adaptive()),
-                        error: (error) => Center(
-                          child: Text(error),
-                        ),
-                        success: (model) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      const SizedBox(height: 8),
+                      Text.rich(
+                        TextSpan(
                           children: [
-                            const Text(
-                              'Notifications',
+                            TextSpan(
+                              text: 'You have ',
                               style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 28,
+                                color: Colors.black
+                                    .withOpacity(0.6000000238418579),
+                                fontSize: 16,
                                 fontFamily: 'SF Pro Text',
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
-                            const SizedBox(height: 8),
-                            Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'You have ',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                          .withOpacity(0.6000000238418579),
-                                      fontSize: 16,
-                                      fontFamily: 'SF Pro Text',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '${model.length} notifications',
-                                    style: const TextStyle(
-                                      color: Color(0xFF00B2FF),
-                                      fontSize: 16,
-                                      fontFamily: 'SF Pro Text',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: ' today',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                          .withOpacity(0.6000000238418579),
-                                      fontSize: 16,
-                                      fontFamily: 'SF Pro Text',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
+                            TextSpan(
+                              text: '${model.length} notifications',
+                              style: const TextStyle(
+                                color: Color(0xFF00B2FF),
+                                fontSize: 16,
+                                fontFamily: 'SF Pro Text',
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
-                            const SizedBox(height: 10),
-                            Expanded(
-                              child: ListView.separated(
-                                physics: const AlwaysScrollableScrollPhysics(),
-                                itemCount: model.length,
-                                separatorBuilder:
-                                    (BuildContext context, int index) {
-                                  return const SizedBox(height: 16);
-                                },
-                                itemBuilder: (BuildContext context, int index) {
-                                  return ItemWidget(
-                                    model: model[index],
-                                    index: index,
-                                  );
-                                },
+                            TextSpan(
+                              text: ' today',
+                              style: TextStyle(
+                                color: Colors.black
+                                    .withOpacity(0.6000000238418579),
+                                fontSize: 16,
+                                fontFamily: 'SF Pro Text',
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
                         ),
-                      );
-                    },
+                      ),
+                      const SizedBox(height: 10),
+                      Expanded(
+                        child: ListView.separated(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          itemCount: model.length,
+                          separatorBuilder: (BuildContext context, int index) {
+                            return const SizedBox(height: 16);
+                          },
+                          itemBuilder: (BuildContext context, int index) {
+                            return ItemWidget(
+                              model: model[index],
+                              index: index,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
+                );
+              },
+            ),
           ),
         ),
       ),

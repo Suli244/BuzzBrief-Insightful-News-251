@@ -36,6 +36,9 @@ class _BottomNavigatorState extends State<GFEdgsrgsd> {
             setState(() {
               index = indexFrom;
             });
+            // final prefs = await SharedPreferences.getInstance();
+            // await prefs.clear();
+            // log('data: clearing ');
           },
           items: [
             BottomNavigationBarItem(
