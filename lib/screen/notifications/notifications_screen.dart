@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insightful_news_251/screen/news/models/news_models.dart';
 import 'package:insightful_news_251/screen/news/news_cubit/news_cubit.dart';
 import 'package:insightful_news_251/screen/notifications/child_pages/notification_detail_page.dart';
+import 'package:insightful_news_251/screen/premium/premium.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_hive.dart';
 import 'package:insightful_news_251/screen/saved_news/saved_model/saved_model.dart';
 import 'package:insightful_news_251/utils/dsaad/adfafa.dart';
@@ -43,9 +45,27 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             child: !isPrem
                 ? Column(
                     children: [
+                      const Text(
+                        'Notifications',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 28,
+                          fontFamily: 'SF Pro Text',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                       const Spacer(),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => const Premium(
+                                isPrem: true,
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           padding: const EdgeInsets.symmetric(vertical: 10),

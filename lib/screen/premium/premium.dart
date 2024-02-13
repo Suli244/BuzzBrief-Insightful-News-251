@@ -6,9 +6,11 @@ import 'package:insightful_news_251/screen/onboarding/widget/button_widget.dart'
 import 'package:insightful_news_251/screen/onboarding/widget/restore_widgets.dart';
 import 'package:insightful_news_251/screen/onboarding/widget/web_view_insightful_news.dart';
 import 'package:insightful_news_251/utils/images/gdsgsg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Premium extends StatelessWidget {
-  const Premium({super.key});
+  const Premium({super.key, this.isPrem = false});
+  final bool isPrem;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,13 +24,17 @@ class Premium extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const GFEdgsrgsd(),
-                      ),
-                      (protected) => false,
-                    );
+                    if (isPrem) {
+                      Navigator.pop(context);
+                    } else {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const GFEdgsrgsd(),
+                        ),
+                        (protected) => false,
+                      );
+                    }
                   },
                   child: Image.asset(
                     Gdsgsg.closeIcon,
@@ -125,7 +131,9 @@ class Premium extends StatelessWidget {
                   SizedBox(height: 48.h),
                   ButtonWidget(
                     color: AppColorsInsightfulNews.color00B2FF,
-                    onPress: () {
+                    onPress: () async {
+                      final prefs = await SharedPreferences.getInstance();
+                      await prefs.setBool('buy', true);
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(

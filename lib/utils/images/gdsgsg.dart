@@ -24,6 +24,7 @@ class Gdsgsg {
   static const String saveNewsIcon = 'assets/images/save_news_icon.png';  
   static const String saveNewsTwoIcon = 'assets/images/save_news_two_icon.png';  
   static const String savedIcon = 'assets/images/saved_icon.png';  
+  static const String savedNewsIcon = 'assets/images/saved_news_icon.png';  
   static const String settingsIcon = 'assets/images/settings_icon.png';  
   static const String shareIcon = 'assets/images/share_icon.png';  
   static const String splashLogo = 'assets/images/splash_logo.png';  
